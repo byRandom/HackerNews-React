@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import "./NewCard.css";
+import parse from "html-react-parser";
 const NewCard = ({ element }) => {
     const [newData, setNewData] = useState({
         by: "",
@@ -29,16 +30,28 @@ const NewCard = ({ element }) => {
     {
         if (newData.text) {
             return (
-                <div className="newItem question">
-                    <a href={newData.url}>{newData.title}</a>
-                    <p>{newData.text}</p>
-                </div>
+                <li className="list-group-item d-flex justify-content-between align-items-start ">
+                    <div className="ms-2 me-auto">
+                        <div className="fw-bold">{newData.title}</div>
+                        {parse(newData.text)}
+                    </div>
+                    <div className="ms-2 me-auto">
+                        <span className="badge bg-primary rounded-pill">
+                            {newData.by}
+                        </span>
+                    </div>
+                </li>
             );
         } else {
             return (
-                <div className="newItem">
-                    <a href={newData.url}>{newData.title}</a>
-                </div>
+                <li className="list-group-item d-flex justify-content-between align-items-start">
+                    <div className="ms-2 me-auto">
+                        <div className="fw-bold">
+                            <a href={newData.url}>{newData.title}</a>
+                        </div>
+                    </div>
+                    <span className="badge bg-primary">{newData.by}</span>
+                </li>
             );
         }
     }

@@ -18,12 +18,11 @@ const NewsList = () => {
     };
 
     return (
-        <div className="newsList">
+        <div className="list-group newsList">
             {news.map((element) => {
                 return (
                     <>
                         <NewCard key={element} element={element} />
-                        <br />
                     </>
                 );
             })}

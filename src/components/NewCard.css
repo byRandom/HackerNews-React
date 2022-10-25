@@ -1,0 +1,9 @@
+.newItem{
+    text-decoration: none;
+    margin:0px ;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 2px;
+    width: 80%;
+    margin: 0 auto;
+}

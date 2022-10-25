@@ -3,25 +3,25 @@ import "./Nav.css";
 const Nav = () => {
     return (
         <>
-            <ul class="nav justify-content-center">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">
+            <ul className="nav justify-content-center">
+                <li className="nav-item">
+                    <a className="nav-link active" aria-current="page" href="#">
                         New
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        Link
+                <li className="nav-item">
+                    <a className="nav-link" href="#">
+                        Past
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        Link
+                <li className="nav-item">
+                    <a className="nav-link" href="#">
+                        Comments
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        Disabled
+                <li className="nav-item">
+                    <a className="nav-link" href="#">
+                        Jobs
                     </a>
                 </li>
             </ul>

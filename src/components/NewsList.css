@@ -1,4 +1,8 @@
-div {
+.newsList{
     font-weight: bold;
     width: 100%;
+    min-width: 1000px;
+    text-align: center;
+    align-items: center !important;
+    margin: 0 auto;
 }

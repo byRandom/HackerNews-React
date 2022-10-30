@@ -7,14 +7,16 @@ const NewsList = () => {
     const [newsPageData, setNewsPageData] = useState([]);
     const [page, setPage] = useState(1);
     const [displayNumber, setDisplayNumber] = useState(15);
-
+    let handleSubmit = (e) => {
+        e.preventDefault();
+    };
     useEffect(() => {
-        axios
-            .get("https://hacker-news.firebaseio.com/v0/newstories.json")
-            .then((res) => {
+        fetch("https://hacker-news.firebaseio.com/v0/newstories.json")
+            .then((res) => res.json())
+            .then((data) => {
                 let newsArray = [];
                 for (let i = 0; i < displayNumber; i++) {
-                    if (res.data[i * page]) newsArray.push(res.data[i * page]);
+                    if (data[i * page]) newsArray.push(data[i * page]);
                 }
                 setNewsPageData(newsArray);
             })
@@ -27,7 +29,7 @@ const NewsList = () => {
             <nav className="">
                 <section className="">
                     <span>items per page</span>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <input
                             type="number"
                             defaultValue={displayNumber}

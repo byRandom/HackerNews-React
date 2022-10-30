@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { useState, useEffect } from "react";
 import parse from "html-react-parser";
 const NewCard = ({ element }) => {
@@ -15,12 +14,12 @@ const NewCard = ({ element }) => {
         url: "",
     });
     const getNewData = () => {
-        axios
-            .get(
-                `https://hacker-news.firebaseio.com/v0/item/${element}.json?print=pretty`
-            )
-            .then((res) => {
-                setNewData(res.data);
+        fetch(
+            `https://hacker-news.firebaseio.com/v0/item/${element}.json?print=pretty`
+        )
+            .then((res) => res.json())
+            .then((data) => {
+                setNewData(data);
             });
     };
     useEffect(() => {

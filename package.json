@@ -9,8 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "browserify": "^17.0.0",
-    "hackernews-api": "^1.0.0",
     "html-react-parser": "^3.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
